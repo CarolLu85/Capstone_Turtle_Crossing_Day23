@@ -10,7 +10,7 @@ class MyTurtle(Turtle):
         self.setheading(90)
 
     def move(self):
-        self.forward(5)
+        self.forward(10)
 
 
     def reset_position(self):
