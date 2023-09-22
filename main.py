@@ -28,15 +28,15 @@ while game_on:
 
     cars.create_cars()
     cars.car_move()
+    # successfully gets to the end
     if player.ycor() > 280:
         player.reset_position()
         player_score = scoreboard.score_update()
         cars.speed_up()
-
+    # detect collision with car
     for car_object in cars.car_list:
         if player.distance(car_object) <= 23:
             game_on = False
-            cars.game_over()
-            print("Over")
+            scoreboard.game_over()
 
 screen.exitonclick()

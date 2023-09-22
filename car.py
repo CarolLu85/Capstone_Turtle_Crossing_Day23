@@ -29,10 +29,3 @@ class Car():
     def speed_up(self):
         self.car_speed += SPEED_UP
 
-    def game_over(self):
-        over = Turtle()
-        over.hideturtle()
-        over.color("black")
-        over.penup()
-        over.goto(0, 0)
-        over.write("GAME OVER", False, "center", FONT)

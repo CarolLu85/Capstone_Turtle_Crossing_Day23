@@ -1,5 +1,5 @@
 from turtle import Turtle
-FONT = ('Arial', 12, 'normal')
+FONT = ('Courier', 12, 'normal')
 
 class ScoreBoard(Turtle):
     def __init__(self):
@@ -7,19 +7,24 @@ class ScoreBoard(Turtle):
         self.hideturtle()
         self.color("black")
         self.penup()
-        self.goto(-260, 260)
+        self.goto(-250, 260)
         self.point = 0
         self.scores()
-        self.over = Turtle()
+
+
 
     def scores(self):
-        self.write(f"level: {self.point} ", False, "center", FONT)
-
-
+        self.write(f"Score: {self.point} ", False, "center", FONT)
+    #
+    #
     def score_update(self):
         self.clear()
         self.point += 1
-        self.write(f"level: {self.point} ", False, "center", FONT)
-
-
-
+        self.scores()
+    #
+    #
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME OVER", False, "center", FONT)
+#    without a clear() method, this "GAME OVER" will just go to the coordinates assigned to it with the "Score:" left on the left corner
+#   of the screen.
